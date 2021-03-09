@@ -7,8 +7,8 @@ from keras.preprocessing.image import ImageDataGenerator
 from keras.preprocessing import image
 
 working_dir = r'C:\data\kaggle\dogs_vs_cats'
-original_dataset_dir = working_dir + r'\dogs_vs_cats\train'
-base_dir = working_dir + r'\dogs_vs_cats_small'
+original_dataset_dir = os.path.join(working_dir, r'dogs_vs_cats\train')
+base_dir = os.path.join(working_dir, r'dogs_vs_cats_small')
 
 train_dir = os.path.join(base_dir, 'train')
 validation_dir = os.path.join(base_dir, 'validation')
