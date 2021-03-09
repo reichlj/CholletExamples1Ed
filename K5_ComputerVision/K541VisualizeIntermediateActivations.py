@@ -13,7 +13,7 @@ model.summary()
 img_path = os.path.join(base_dir, r'test\cats\cat.1700.jpg')
 img = image.load_img(img_path, target_size=(150, 150))
 img_tensor = image.img_to_array(img)
-img_tensor = np.expand_dims(img_tensor, axis=0)
+img_tensor = np.expand_dims(img_tensor, axis=0)  # (1,150,150)
 img_tensor /= 255.
 print(img_tensor.shape)
 plt.imshow(img_tensor[0])
@@ -30,9 +30,7 @@ plt.show()
 plt.matshow(first_layer_activation[0, :, :, 7], cmap='viridis')
 plt.show()
 
-layer_names = []
-for layer in model.layers[:8]:
-    layer_names.append(layer.name)
+layer_names = [layer for layer in model.layers[:8]]
 images_per_row = 16
 
 for layer_name, layer_activation in zip(layer_names, activations):
