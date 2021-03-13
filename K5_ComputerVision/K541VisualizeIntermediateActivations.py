@@ -7,7 +7,7 @@ from keras.models import load_model
 
 base_dir = r'C:\data\kaggle\dogs_vs_cats\dogs_vs_cats_small'
 model = load_model(os.path.join(base_dir,
-                   'cats_and_dogs_small_2_augmentation.h5'))
+                   r'cats_and_dogs_small_2_augmentation.h5'))
 model.summary()
 
 img_path = os.path.join(base_dir, r'test\cats\cat.1700.jpg')
