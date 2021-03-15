@@ -5,9 +5,10 @@ from keras import layers
 from keras.datasets import imdb
 
 def vectorize_sequences(sequences, dimension=10000):
+    # create feature vectors of size dimension - one-hot encode
     results = np.zeros((len(sequences), dimension))
     for i, sequence in enumerate(sequences):
-        # sequence is a list
+        # sequence is an int
         results[i, sequence] = 1.
     return results
 
